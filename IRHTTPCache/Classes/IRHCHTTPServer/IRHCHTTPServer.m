@@ -10,6 +10,7 @@
 #import "IRHCHTTPHeader.h"
 #import "IRHCURLTool.h"
 #import "IRHCLog.h"
+#import <UIKit/UIKit.h>
 
 @interface IRHCHTTPServer ()
 

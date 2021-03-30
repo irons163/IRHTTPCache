@@ -1,0 +1,6 @@
+framework module Pods_IRHTTPCache {
+  umbrella header "Pods-IRHTTPCache-umbrella.h"
+
+  export *
+  module * { export * }
+}

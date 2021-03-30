@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+//#if __has_include(<IRHTTPCache/IRHTTPCache.h>)
+
 //! Project version number for IRHTTPCache.
 FOUNDATION_EXPORT double IRHTTPCacheVersionNumber;
 
@@ -15,30 +17,30 @@ FOUNDATION_EXPORT const unsigned char IRHTTPCacheVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <IRHTTPCache/PublicHeader.h>
 
-#import <KTVHTTPCache/KTVHCRange.h>
-#import <KTVHTTPCache/KTVHCDataReader.h>
-#import <KTVHTTPCache/KTVHCDataLoader.h>
-#import <KTVHTTPCache/KTVHCDataRequest.h>
-#import <KTVHTTPCache/KTVHCDataResponse.h>
-#import <KTVHTTPCache/KTVHCDataCacheItem.h>
-#import <KTVHTTPCache/KTVHCDataCacheItemZone.h>
+#import <IRHTTPCache/IRHCRange.h>
+#import <IRHTTPCache/IRHCDataReader.h>
+#import <IRHTTPCache/IRHCDataLoader.h>
+#import <IRHTTPCache/IRHCDataRequest.h>
+#import <IRHTTPCache/IRHCDataResponse.h>
+#import <IRHTTPCache/IRHCDataCacheItem.h>
+#import <IRHTTPCache/IRHCDataCacheItemZone.h>
 
-#else
-
-#import "KTVHCRange.h"
-#import "KTVHCDataReader.h"
-#import "KTVHCDataLoader.h"
-#import "KTVHCDataRequest.h"
-#import "KTVHCDataResponse.h"
-#import "KTVHCDataCacheItem.h"
-#import "KTVHCDataCacheItemZone.h"
-
-#endif
+//#else
+//
+//#import "IRHCRange.h"
+//#import "IRHCDataReader.h"
+//#import "IRHCDataLoader.h"
+//#import "IRHCDataRequest.h"
+//#import "IRHCDataResponse.h"
+//#import "IRHCDataCacheItem.h"
+//#import "IRHCDataCacheItemZone.h"
+//
+//#endif
 
 /**
- *  KTVHTTPCache is a smart media cache framework.
+ *  IRHTTPCache is a smart media cache framework.
  */
-@interface KTVHTTPCache : NSObject
+@interface IRHTTPCache : NSObject
 
 /**
  *  HTTP Server
@@ -98,7 +100,7 @@ FOUNDATION_EXPORT const unsigned char IRHTTPCacheVersionString[];
  *  @param request : The request of the expected data.
  *  @return The data reader for request.
  */
-+ (KTVHCDataReader *)cacheReaderWithRequest:(KTVHCDataRequest *)request;
++ (IRHCDataReader *)cacheReaderWithRequest:(IRHCDataRequest *)request;
 
 /**
  *  Create the data loader for the request.
@@ -106,7 +108,7 @@ FOUNDATION_EXPORT const unsigned char IRHTTPCacheVersionString[];
  *  @param request : The request of the expected data.
  *  @return The data loader for request.
  */
-+ (KTVHCDataLoader *)cacheLoaderWithRequest:(KTVHCDataRequest *)request;
++ (IRHCDataLoader *)cacheLoaderWithRequest:(IRHCDataRequest *)request;
 
 /**
  *  Set the maximum cache length.
@@ -136,14 +138,14 @@ FOUNDATION_EXPORT const unsigned char IRHTTPCacheVersionString[];
  *  @param URL : The URL for HTTP content.
  *  @return The cache item for URL.
  */
-+ (KTVHCDataCacheItem *)cacheCacheItemWithURL:(NSURL *)URL;
++ (IRHCDataCacheItem *)cacheCacheItemWithURL:(NSURL *)URL;
 
 /**
  *  Get all cache items.
  *
  *  @return All cache items.
  */
-+ (NSArray<KTVHCDataCacheItem *> *)cacheAllCacheItems;
++ (NSArray<IRHCDataCacheItem *> *)cacheAllCacheItems;
 
 /**
  *  Delete cache for URL.
@@ -339,14 +341,14 @@ FOUNDATION_EXPORT const unsigned char IRHTTPCacheVersionString[];
  */
 #pragma mark - Deprecated
 
-@interface KTVHTTPCache (Deprecated)
+@interface IRHTTPCache (Deprecated)
 
 + (void)logDeleteRecordLog                                                      __attribute__((deprecated("Use +logDeleteRecordLogFile instead.")));
 + (NSString *)logRecordLogFilePath                                              __attribute__((deprecated("Use +logRecordLogFileURL instead.")));
 + (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString         __attribute__((deprecated("Use +proxyURLWithOriginalURL: instead.")));
 + (NSURL *)cacheCompleteFileURLIfExistedWithURL:(NSURL *)URL                    __attribute__((deprecated("Use +cacheCompleteFileURLWithURL: instead.")));
 + (NSString *)cacheCompleteFilePathIfExistedWithURLString:(NSString *)URLString __attribute__((deprecated("Use +cacheCompleteFileURLWithURL: instead.")));
-+ (KTVHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString       __attribute__((deprecated("Use +cacheCacheItemWithURL: instead.")));
++ (IRHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString       __attribute__((deprecated("Use +cacheCacheItemWithURL: instead.")));
 + (void)cacheDeleteCacheWithURLString:(NSString *)URLString                     __attribute__((deprecated("Use +cacheDeleteCacheWithURL: instead.")));
 + (void)tokenSetURLFilter:(NSURL * (^)(NSURL * URL))URLFilter                   __attribute__((deprecated("Use +encodeSetURLConverter: instead.")));
 + (void)downloadSetAcceptContentTypes:(NSArray<NSString *> *)acceptContentTypes __attribute__((deprecated("Use +downloadSetAcceptableContentTypes: instead.")));
