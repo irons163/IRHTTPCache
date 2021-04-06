@@ -9,18 +9,15 @@ PODS:
     - IRFFMpeg
 
 DEPENDENCIES:
-  - IRHTTPCache (from `../IRHTTPCache.podspec`)
+  - IRHTTPCache
   - IRPlayer
 
 SPEC REPOS:
   trunk:
     - IRCocoaHTTPServer
     - IRFFMpeg
+    - IRHTTPCache
     - IRPlayer
-
-EXTERNAL SOURCES:
-  IRHTTPCache:
-    :path: "../IRHTTPCache.podspec"
 
 SPEC CHECKSUMS:
   IRCocoaHTTPServer: 84938312ca7344f2ce5f1b3eadcb433ecd9b53ff
@@ -28,6 +25,6 @@ SPEC CHECKSUMS:
   IRHTTPCache: 16a1d39cc2467d9fea76d9c095facdb401917830
   IRPlayer: 32858915f98b76c9bcd3dddc55f9d745426b71ec
 
-PODFILE CHECKSUM: e78daf61d5e514dfe49b87abc30cd3a7751322a1
+PODFILE CHECKSUM: cbeae80051cd241a7bc49e3e581cb744a3be3bff
 
 COCOAPODS: 1.8.4

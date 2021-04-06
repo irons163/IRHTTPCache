@@ -6,6 +6,7 @@ target 'demo' do
   use_frameworks!
 
   # Pods for demo
-  pod 'IRHTTPCache', :path => '../IRHTTPCache.podspec'
+#  pod 'IRHTTPCache', :path => '../IRHTTPCache.podspec'
+  pod 'IRHTTPCache'
   pod 'IRPlayer'
 end
