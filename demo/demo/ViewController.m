@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "MediaViewController.h"
+#import "PlayerViewController.h"
 #import "MediaItem.h"
 #import "MediaCell.h"
 #import <IRHTTPCache/IRHTTPCache.h>
@@ -52,15 +53,23 @@
 
 - (void)setupItems
 {
-    MediaItem *item1 = [[MediaItem alloc] initWithTitle:@"萧亚轩 - 冲动"
+    MediaItem *item1 = [[MediaItem alloc] initWithTitle:@"Demo1 - AVPlayer"
                                               URLString:@"http://aliuwmp3.changba.com/userdata/video/45F6BD5E445E4C029C33DC5901307461.mp4"];
-    MediaItem *item2 = [[MediaItem alloc] initWithTitle:@"张惠妹 - 你是爱我的"
+    MediaItem *item2 = [[MediaItem alloc] initWithTitle:@"Demo2 - AVPlayer"
                                               URLString:@"http://aliuwmp3.changba.com/userdata/video/3B1DDE764577E0529C33DC5901307461.mp4"];
-    MediaItem *item3 = [[MediaItem alloc] initWithTitle:@"hush! - 都是你害的"
+    MediaItem *item3 = [[MediaItem alloc] initWithTitle:@"Demo3 - AVPlayer"
                                               URLString:@"http://qiniuuwmp3.changba.com/941946870.mp4"];
-    MediaItem *item4 = [[MediaItem alloc] initWithTitle:@"张学友 - 我真的受伤了"
+    MediaItem *item4 = [[MediaItem alloc] initWithTitle:@"Demo4 - AVPlayer"
                                               URLString:@"http://lzaiuw.changba.com/userdata/video/940071102.mp4"];
-    self.items = @[item1, item2, item3, item4];
+    MediaItem *item5 = [[MediaItem alloc] initWithTitle:@"Demo1 - IRPlayer"
+                                              URLString:@"http://aliuwmp3.changba.com/userdata/video/45F6BD5E445E4C029C33DC5901307461.mp4"];
+    MediaItem *item6 = [[MediaItem alloc] initWithTitle:@"Demo2 - IRPlayer"
+                                              URLString:@"http://aliuwmp3.changba.com/userdata/video/3B1DDE764577E0529C33DC5901307461.mp4"];
+    MediaItem *item7 = [[MediaItem alloc] initWithTitle:@"Demo3 - IRPlayer"
+                                              URLString:@"http://qiniuuwmp3.changba.com/941946870.mp4"];
+    MediaItem *item8 = [[MediaItem alloc] initWithTitle:@"Demo4 - IRPlayer"
+                                              URLString:@"http://lzaiuw.changba.com/userdata/video/940071102.mp4"];
+    self.items = @[item1, item2, item3, item4, item5, item6, item7, item8];
     [self.tableView reloadData];
 }
 
@@ -87,7 +96,14 @@
     MediaItem *item = [self.items objectAtIndex:indexPath.row];
     NSString *URLString = [item.URLString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *URL = [IRHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:URLString]];
-    MediaViewController *vc = [[MediaViewController alloc] initWithURLString:URL.absoluteString];
+    UIViewController *vc = nil;
+    if (indexPath.row < 4) {
+        vc = [[MediaViewController alloc] initWithURLString:URL.absoluteString];
+    } else {
+        vc = [[PlayerViewController alloc] initWithURLString:URL.absoluteString];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        ((PlayerViewController *)vc).demoType = DemoType_FFmpeg_Normal_Hardware;
+    }
     [self presentViewController:vc animated:YES completion:nil];
 }
 

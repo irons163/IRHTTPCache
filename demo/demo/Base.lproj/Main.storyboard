@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="116" y="102.99850074962519"/>
         </scene>
-        <!--KTV-->
+        <!--Demo-->
         <scene sceneID="lpR-Ts-OLv">
             <objects>
                 <viewController id="kEa-Bw-dbo" customClass="ViewController" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
                             <constraint firstItem="PYj-xK-pGi" firstAttribute="leading" secondItem="tc7-Pe-zzb" secondAttribute="leading" id="lP4-CN-wxh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="KTV" id="DTN-qx-b0B"/>
+                    <navigationItem key="navigationItem" title="Demo" id="DTN-qx-b0B"/>
                     <connections>
                         <outlet property="tableView" destination="o64-yJ-3a7" id="Z97-Ak-p3L"/>
                     </connections>

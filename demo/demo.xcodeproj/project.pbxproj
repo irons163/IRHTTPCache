@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		578B6BDB0E57EE3D8B8826A2 /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06015E18ACC3257B194A22A1 /* Pods_demo.framework */; };
+		B560618D261C436B00523412 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5606189261C436B00523412 /* PlayerViewController.xib */; };
+		B560618E261C436B00523412 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B560618B261C436B00523412 /* PlayerViewController.m */; };
 		B5F91C35260D875200990563 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F91C34260D875200990563 /* AppDelegate.m */; };
 		B5F91C38260D875200990563 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F91C37260D875200990563 /* SceneDelegate.m */; };
 		B5F91C3B260D875200990563 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F91C3A260D875200990563 /* ViewController.m */; };
@@ -50,6 +52,9 @@
 		06015E18ACC3257B194A22A1 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF665B5E914C946DBC635C /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 		98791C31A35A747D7450BF66 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B5606189261C436B00523412 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		B560618B261C436B00523412 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		B560618C261C436B00523412 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		B5F91C30260D875200990563 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F91C33260D875200990563 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5F91C34260D875200990563 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -155,6 +160,9 @@
 			children = (
 				B5F91DC92612BF7400990563 /* MediaViewController.h */,
 				B5F91DCA2612BF7400990563 /* MediaViewController.m */,
+				B560618C261C436B00523412 /* PlayerViewController.h */,
+				B560618B261C436B00523412 /* PlayerViewController.m */,
+				B5606189261C436B00523412 /* PlayerViewController.xib */,
 				B5F91DCD2612BFA900990563 /* MediaItem.h */,
 				B5F91DCE2612BFA900990563 /* MediaItem.m */,
 				B5F91DD12612BFB400990563 /* MediaCell.h */,
@@ -186,7 +194,6 @@
 				98791C31A35A747D7450BF66 /* Pods-demo.debug.xcconfig */,
 				09EF665B5E914C946DBC635C /* Pods-demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F91C43260D875200990563 /* LaunchScreen.storyboard in Resources */,
+				B560618D261C436B00523412 /* PlayerViewController.xib in Resources */,
 				B5F91C40260D875200990563 /* Assets.xcassets in Resources */,
 				B5F91C3E260D875200990563 /* Main.storyboard in Resources */,
 			);
@@ -329,6 +337,7 @@
 				B5F91C38260D875200990563 /* SceneDelegate.m in Sources */,
 				B5F91DCB2612BF7400990563 /* MediaViewController.m in Sources */,
 				B5F91DD32612BFB400990563 /* MediaCell.m in Sources */,
+				B560618E261C436B00523412 /* PlayerViewController.m in Sources */,
 				B5F91DCF2612BFA900990563 /* MediaItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

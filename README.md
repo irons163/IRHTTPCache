@@ -16,7 +16,9 @@
 - Accurate view caching information.
 - Provide different levels of interface.
 - Adjust the download configuration.
-
+- Including demo
+    - AVPlayer
+    - ([IRPlayer](https://github.com/irons163/IRPlayer))
 
 ## Install
 ### Git
@@ -96,5 +98,4 @@ NSString *logFilePath = [IRHTTPCache logRecordLogFilePath];
 | Demo Main Page | Demo1 |
 |:---:|:---:|
 |![Demo1](./ScreenShots/demo1.png)|![Demo2](./ScreenShots/demo2.png)| 
-| Demo3 | Demo4 |
-|![Demo3](./ScreenShots/demo3.png)|![Demo4](./ScreenShots/demo4.png)| 
+
