@@ -11,6 +11,7 @@
 
 ## Features
 
+- Support Swift.
 - Thread safety.
 - Logging system, Support for console and file output.
 - Accurate view caching information.
@@ -34,6 +35,44 @@
 - `pod install`
 
 ## Usage
+
+### Swift
+
+```swift
+let _: () = { () -> () in
+    self.setupHTTPCache()
+}()
+        
+...
+
+func setupHTTPCache() {
+    IRHTTPCache.logSetConsoleLogEnable(true)
+    do {
+        try IRHTTPCache.proxyStart()
+        NSLog("Proxy Start Success");
+    } catch {
+        NSLog("Proxy Start Failure");
+    }
+
+    IRHTTPCache.encodeSetURLConverter { (URL) -> URL? in
+        NSLog("URL Filter reviced URL")
+        return URL
+    }
+
+    IRHTTPCache.downloadSetUnacceptableContentTypeDisposer { (URL, contentType) -> Bool in
+        NSLog("Unsupport Content-Type Filter reviced URL")
+        return false
+    }
+}
+```
+
+- Generated proxy URL.
+
+```swift
+IRHTTPCache.proxyURL(withOriginalURL: originalURL)
+```
+
+### ObjC
 
 - Start proxy.
 
